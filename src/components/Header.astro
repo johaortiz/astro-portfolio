@@ -1,0 +1,66 @@
+<header
+    id="principal-header"
+    class="px-10 py-3 flex items-center fixed top-0 w-screen justify-between z-50 text-white font-semibold "
+>
+    <div class="flex flex-grow basis-0 text-xl cursor-default">
+        {`<apsTris.dev />`}
+    </div>
+    <ul class="flex text-sm [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2">
+        <li><a class="rounded-full p-3" href="">Curriculum</a></li>
+    </ul>
+
+    <nav class="flex flex-grow basis-0 justify-end">
+        <ul
+            class="flex text-sm [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
+        >
+            <li><a class="nav-link" href="#home">Home</a></li>
+            <li><a class="nav-link" href="#projects">Proyectos</a></li>
+            <li><a class="nav-link" href="#about">Sobre Mí</a></li>
+            <li><a class="nav-link" href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <div
+        id="menu-backdrop"
+        class="absolute left-0 top-0 bg-black/25 backdrop:blur-lg rounded translate-x-[var(--left)] translate-y-[var(--top)] w-[var(--width)] h-[var(--height)] duration-500 ease-in-out opacity-0 -z-10"
+    >
+    </div>
+</header>
+
+<script>
+    // Animation of block behind li's in NavBar
+    const $listItem = document.querySelectorAll("#principal-header li");
+    const $menuBackDrop = document.querySelector(
+        "#menu-backdrop"
+    ) as HTMLElement;
+
+    $listItem.forEach((item) => {
+        item.addEventListener("mouseenter", () => {
+            const { left, top, width, height } = item.getBoundingClientRect();
+            $menuBackDrop.style.setProperty("--left", `${left}px`);
+            $menuBackDrop.style.setProperty("--top", `${top}px`);
+            $menuBackDrop.style.setProperty("--width", `${width}px`);
+            $menuBackDrop.style.setProperty("--height", `${height}px`);
+            $menuBackDrop.style.opacity = "1";
+            $menuBackDrop.style.visibility = "visible";
+        });
+        item.addEventListener("mouseleave", () => {
+            $menuBackDrop.style.opacity = "0";
+            $menuBackDrop.style.visibility = "hidden";
+        });
+    });
+
+    // Move of Sections
+    const $navLinks = document.querySelectorAll(".nav-link");
+
+    $navLinks.forEach((navLink) => {
+        navLink.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            const $target = document.querySelector(this.getAttribute("href"));
+            $target.scrollIntoView({
+                behavior: "smooth",
+            });
+        });
+    });
+</script>
