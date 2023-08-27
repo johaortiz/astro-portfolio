@@ -1,6 +1,11 @@
 ---
 import Card from "./Card.astro";
 import aboutImg from "../../public/pictures/about.png";
+const paragraphs = [
+  "Con más de 2 años de experiencia en el mundo del desarrollo, he trabajado en una variedad de proyectos desafiantes.",
+  "Estoy estudiando Ingeniería en Sistemas de Información en la Universidad de la Cuenca del Plata dónde también estoy realizando actividades como ayudante de cátedras.",
+  "Mi objetivo a corto plazo es colaborar en proyectos ambiciosos que desafíen mis habilidades y me permitan crecer como profesional. A largo plazo, aspiro a liderar equipos de desarrollo y contribuir al avance de la tecnología",
+];
 const frontTecnologies = [
   "React",
   "Astro",
@@ -17,87 +22,104 @@ const frontTecnologies = [
   "Sass",
   "Bootstrap",
   "MUI",
+  "DaisyUi",
+  "Flowbite",
+  "Y más...",
+];
+const backTecnologies = [
+  "NodeJs",
+  "Laravel",
+  "Express",
+  "Postgresql",
+  "MongoDb",
+  "Sequelize",
+  "TypeORM",
+  "Morgan",
+  "Jwt",
+  "NodeMailer",
+  "OAuth",
+  "Cloudinary",
+  "Auth0",
+  "Y más...",
+];
+const generalTecnologies = [
+  "JavaScript",
+  "TypeScript",
+  "Java",
+  "C",
+  "C++",
+  "C#",
+  "Python",
+  "Rust",
+  "PHP",
+  "Y más...",
 ];
 ---
 
 <section
   id="about"
-  class="landing-section bg-[#27272a] h-screen text-center relative overflow-hidden text-black"
-  data-header-color="black"
+  class="landing-section bg-[#27272a] h-screen w-full text-center relative overflow-hidden text-black"
+  data-header-color="#580c37"
 >
-  <header class="pt-20 z-40">
-    <div
-      class="ml-10 lg:mr-52 rounded-lg z-40 relative [&>p]:text-xl [&>p]:py-1 [&>p]:px-10 [&>p]:text-left"
+  <div class="z-30 relative h-full flex flex-col">
+    <header class="pt-20 z-40">
+      <div class="ml-10 lg:mr-52 rounded-lg z-40 relative">
+        <h2
+          class="font-semibold text-3xl py-5 px-10 hover:text-[#0a0a0a] duration-500"
+        >
+          ¡Esto es un poco sobre mí!
+        </h2>
+        <div class="hidden sm:block">
+          {
+            paragraphs.map((paragraph) => {
+              return (
+                <p class="text-xl py-1 px-1 sm:px-10 text-left hover:text-[#0a0a0a] duration-500">
+                  {paragraph}
+                </p>
+              );
+            })
+          }
+        </div>
+        <div class="block sm:hidden">
+          <p
+            id="corousel-paragraphs-1"
+            class="text-xl pt-1 px-10 text-left hover:text-[#0a0a0a] duration-500"
+          >
+            Con más de 2 años de experiencia en el mundo del desarrollo, he
+            trabajado en una variedad de proyectos.
+          </p>
+        </div>
+      </div>
+
+      <div class="absolute top-0 bottom-0 h-full w-full z-10">
+        <img
+          class="object-cover object-center h-full w-full top-0 bottom-0"
+          src={aboutImg}
+          alt="bg"
+        />
+      </div>
+    </header>
+    <footer
+      class="flex flex-col sm:flex-row flex-grow justify-end sm:justify-center items-center z-40 relative [&>button]:m-3"
     >
-      <h2
-        class="font-semibold text-3xl py-5 px-10 hover:text-[#0a0a0a] duration-500"
-      >
-        ¡Esto es un poco sobre mí!
-      </h2>
-      <p class="hover:text-[#0a0a0a] duration-500">
-        Con más de 2 años de experiencia en el mundo del desarrollo, he
-        trabajado en una variedad de proyectos desafiantes.
-      </p>
-      <p class="hover:text-[#0a0a0a] duration-500">
-        Estoy estudiando Ingeniería en Sistemas de Información en la Universidad
-        de la Cuenca del Plata dónde también estoy realizando actividades como
-        ayudante de cátedras.
-      </p>
-      <p class="hover:text-[#0a0a0a] duration-500">
-        Mi objetivo a corto plazo es colaborar en proyectos ambiciosos que
-        desafíen mis habilidades y me permitan crecer como profesional. A largo
-        plazo, aspiro a liderar equipos de desarrollo y contribuir al avance de
-        la tecnología.
-      </p>
-    </div>
-    <div class="absolute top-0 bottom-0 h-full w-full z-10">
-      <img class="object-cover object-center h-full w-full" src={aboutImg} />
-    </div>
-  </header>
-  <footer class="flex justify-center z-40 relative">
-    <Card
-      title="FrontEnd"
-      subTitle="¡Tecnologías que tuve el placer de explorar!"
-      tecnologies={frontTecnologies}
-    />
-  </footer>
-</section>
-
-<!-- 
-
-      <div class="max-w-sm mx-auto my-10 bg-white rounded-lg shadow-md p-5">
-      <img  
-        class="w-14 h-14 rounded-full "
-        src="https://picsum.photos/200"
-        alt="Profile picture"
+      <Card
+        title="FrontEnd"
+        subTitle="El Maravilloso Mundo del Front-End: Transformando Visiones en Realidad"
+        tecnologies={frontTecnologies}
+        numberCard="0"
       />
-<h2 class="text-center text-2xl font-semibold mt-3 text-black">Tecnologías</h2>
-<p class="text-center text-gray-600 mt-1">Front End</p>
-<div
-  class="flex justify-center mt-5 [&>div>p]:text-blue-500 [&>div>p]:mx-3 cursor-default"
->
-  <div class="flex flex-col">
-    <p class="hover:text-blue-700">React</p>
-    <p class="hover:text-blue-700">Astro</p>
-    <p class="hover:text-blue-700">Vue</p>
+      <Card
+        title="BackEnd"
+        subTitle="Los Entresijos del Back-End: Tejiendo la Lógica que Sustenta la Tecnología"
+        tecnologies={backTecnologies}
+        numberCard="1"
+      />
+      <Card
+        title="General"
+        subTitle="Explorando el Universo de los Lenguajes: Más Allá del Código"
+        tecnologies={generalTecnologies}
+        numberCard="2"
+      />
+    </footer>
   </div>
-  <div class="flex flex-col">
-    <p class="hover:text-blue-700">Angular</p>
-    <p class="hover:text-blue-700">HTML</p>
-    <p class="hover:text-blue-700">CSS</p>
-  </div>
-  <div class="flex flex-col">
-    <p class="hover:text-blue-700">Tailwind</p>
-    <p class="hover:text-blue-700">Boostrap</p>
-    <p class="hover:text-blue-700">GitHub</p>
-  </div>
-</div>
-<div class="mt-5">
-        <h3 class="text-xl font-semibold">Bio</h3>
-        <p class="text-gray-600 mt-2">
-          John is a software engineer with over 10 years of experience in
-          developing web and mobile applications. He is skilled in JavaScript,
-          React, and Node.js.
-        </p>
-      </div> 
--->
+</section>

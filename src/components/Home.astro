@@ -3,35 +3,46 @@ import instagram from "../../public/icons/instagram.svg";
 import linkedin from "../../public/icons/linkedin.svg";
 import github from "../../public/icons/github.svg";
 import video from "../../public/video/bg.mp4";
+const paragraphs = [
+  "Estoy emocionado de compartir contigo un vistazo a mi viaje artístico y profesional.",
+  "Aquí encontrarás un escaparate de mis creaciones y proyectos que reflejan mi pasión y dedicación.",
+  "Cada pieza cuenta una historia única y cada diseño lleva consigo un fragmento de mi alma.",
+];
 ---
 
 <section
   id="home"
-  class="landing-section bg-[#4C586F] h-screen w-full text-center relative overflow-hidden text-white"
+  class="landing-section bg-[#4C586F] h-screen w-full text-center relative sm:overflow-hidden text-white"
   data-header-color="white"
 >
   <div class="z-30 relative h-full flex flex-col">
-    <header class="pt-40">
-      <div
-        class="mx-10 rounded-lg z-40 relative [&>p]:text-xl [&>p]:py-1 [&>p]:px-10 [&>p]:text-left"
-      >
+    <header class="pt-14 sm:pt-40">
+      <div class="mx-10 rounded-lg z-40 relative">
         <h2
           class="font-semibold text-3xl py-5 px-10 hover:text-[#dfdfdf] duration-500"
         >
           👋 ¡<strong>Hola</strong> y bienvenido a mi <strong>Mundo</strong> Creativo!
         </h2>
-        <p class="hover:text-[#dfdfdf] duration-500">
-          Estoy emocionado de compartir contigo un vistazo a mi viaje artístico
-          y profesional.
-        </p>
-        <p class="hover:text-[#dfdfdf] duration-500">
-          Aquí encontrarás un escaparate de mis creaciones y proyectos que
-          reflejan mi pasión y dedicación.
-        </p>
-        <p class="hover:text-[#dfdfdf] duration-500">
-          Cada pieza cuenta una historia única y cada diseño lleva consigo un
-          fragmento de mi alma.
-        </p>
+        <div class="hidden sm:block">
+          {
+            paragraphs.map((paragraph) => {
+              return (
+                <p class="text-xl py-1 px-10 text-left hover:text-[#dfdfdf] duration-500">
+                  {paragraph}
+                </p>
+              );
+            })
+          }
+        </div>
+        <div class="block sm:hidden">
+          <p
+            id="corousel-paragraphs-0"
+            class="text-xl py-1 px-10 text-left hover:text-[#dfdfdf] duration-500"
+          >
+            Estoy emocionado de compartir contigo un vistazo a mi viaje
+            artístico y profesional.
+          </p>
+        </div>
       </div>
 
       <div class="absolute top-0 bottom-0 h-full w-full z-10">
@@ -43,7 +54,7 @@ import video from "../../public/video/bg.mp4";
           src={video}></video>
       </div>
     </header>
-    <footer class="flex flex-col flex-grow justify-end pb-40 z-40 relative">
+    <footer class="flex flex-col flex-grow justify-end pb-5 sm:pb-24 z-40 relative">
       <div>
         <a
           class="nav-link border-[3px] border-white bg-white/5 backdrop-blur-sm text-sm rounded font-medium text-white px-12 py-2 inline-block hover:bg-white hover:text-black duration-500 transition-colors"
