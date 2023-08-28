@@ -1,0 +1,33 @@
+---
+const { img, nameImg, numberItem, title, paragraphs } = Astro.props;
+const modal = `my_modal_${numberItem}.showModal()`;
+---
+
+<div class="hidden duration-700 ease-in-out" data-carousel-item>
+    <button class="" onclick={modal}>
+        <img
+            src={img}
+            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            alt={nameImg}
+        />
+    </button>
+</div>
+
+<dialog id=`my_modal_${numberItem}` class="modal modal-bottom sm:modal-middle">
+    <form
+        method="dialog"
+        class="modal-box bg-black/75 backdrop-blur-sm text-white"
+    >
+        <h3 class="font-bold text-lg">{title}</h3>
+        <div class="mt-9">
+            {
+                paragraphs.map((text: string) => {
+                    return <p class="p-1">{text}</p>;
+                })
+            }
+        </div>
+        <div class="modal-action">
+            <button class="btn">Cerrar</button>
+        </div>
+    </form>
+</dialog>
