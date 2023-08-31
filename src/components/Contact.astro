@@ -1,0 +1,36 @@
+---
+import contactImg from "../../public/pictures/contact.jpg";
+---
+
+<section
+    id="about"
+    class="landing-section bg-[#27272a] h-screen w-full text-center relative overflow-hidden text-white"
+    data-header-color="white"
+>
+    <div class="z-30 relative h-full flex flex-col">
+        <header class="pt-20 z-40">
+            <div class="ml-10 lg:mr-52 rounded-lg z-40 relative">
+                <h2
+                    class="font-semibold text-3xl py-2 px-10 hover:text-[#dfdfdf] duration-500"
+                >
+                    Contáctame
+                </h2>
+                <p class="">¡Responderé en cuanto lo lea!</p>
+                <form action="">
+                    
+                </form>
+            </div>
+            <div class="absolute top-0 bottom-0 h-full w-full z-10">
+                <img
+                    class="object-cover object-center h-full w-full top-0 bottom-0"
+                    src={contactImg}
+                    alt="bg"
+                />
+            </div>
+        </header>
+        <footer
+            class="flex flex-col sm:flex-row flex-grow justify-end sm:justify-center items-center z-40 relative [&>button]:m-3"
+        >
+        </footer>
+    </div>
+</section>

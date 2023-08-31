@@ -1,5 +1,14 @@
 ---
-const { img, nameImg, numberItem, title, paragraphs } = Astro.props;
+const {
+    img,
+    nameImg,
+    numberItem,
+    title,
+    paragraphs,
+    gitGubLink,
+    projectLink,
+    tecnologies,
+} = Astro.props;
 const modal = `my_modal_${numberItem}.showModal()`;
 ---
 
@@ -18,15 +27,33 @@ const modal = `my_modal_${numberItem}.showModal()`;
         method="dialog"
         class="modal-box bg-black/75 backdrop-blur-sm text-white"
     >
-        <h3 class="font-bold text-lg">{title}</h3>
-        <div class="mt-9">
+        <h3 class="font-bold text-3xl">{title}</h3>
+        <div class="mt-5 text-left">
+            <h4 class="font-bold text-lg text-center py-1">
+                Objetivos del Proyecto
+            </h4>
             {
-                paragraphs.map((text: string) => {
-                    return <p class="p-1">{text}</p>;
+                paragraphs.map((text: string, i: number) => {
+                    return (
+                        <p class="p-1">
+                            {i % 2 === 0 ? "⚫" : "🔘"}
+                            {text}
+                        </p>
+                    );
                 })
             }
         </div>
+        <h4 class="font-bold text-lg text-center py-1">
+            Tecnologías Utilizadas
+        </h4>
+        <span>{tecnologies.join(" - ")}</span>
         <div class="modal-action">
+            <a href={projectLink} target="_blank">
+                <button class="btn">Proyecto</button>
+            </a>
+            <a href={gitGubLink} target="_blank">
+                <button class="btn">GitHub</button>
+            </a>
             <button class="btn">Cerrar</button>
         </div>
     </form>

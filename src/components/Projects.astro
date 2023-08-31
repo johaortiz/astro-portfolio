@@ -1,14 +1,63 @@
 ---
 import ItemCarousel from "./ItemCarousel.astro";
 import projectImg from "../../public/pictures/projects.jpg";
-import movies from "../../public/pictures/projects/movies.png";
+import moviesP from "../../public/pictures/projects/movies.png";
 import booksPf from "../../public/pictures/projects/booksPf.png";
 import dogsPi from "../../public/pictures/projects/dogsPi.png";
 import matrix from "../../public/pictures/projects/matrix.png";
-const movieParagraphs = [
-    "Construir una App utilizando React, Redux, Node y Sequelize",
-    "Para afianzar y conectar los conceptos aprendidos en el curso",
-];
+
+const dogs = {
+    paragraphs: [
+        "Construir una App utilizando React, Redux, Node y Sequelize",
+        "Para afianzar y conectar los conceptos aprendidos en el curso",
+        "Aprender buenas prácticas",
+        "Aprender y practicar el flujo de trabajo de GIT",
+        "Utilizar y practicar testing",
+    ],
+    tecnologies: ["React", "Redux", "Css", "NodeJs"],
+};
+
+const university = {
+    paragraphs: [
+        "Resolver problemas simples de matrices",
+        "Ser capaz de resolverlo en código",
+    ],
+    tecnologies: ["React", "JavaScript", "DaisyUi", "Tailwind"],
+};
+
+const books = {
+    paragraphs: [
+        "Construir un E-commerce utilizando React, Redux, Node y Sequelize",
+        "Aprender buenas prácticas",
+        "Aprender y practicar Git-Flow",
+        "Liderar un equipo",
+    ],
+    tecnologies: [
+        "React",
+        "Redux",
+        "DaisyUi",
+        "Tailwind",
+        "Mui",
+        "NodeJs",
+        "Sequelize",
+        "jwt",
+        "Postgres",
+        "Paypal",
+        "Google OAuth2",
+        "Cloudinary",
+    ],
+};
+
+const movies = {
+    paragraphs: [
+        "Construir una App utilizando React y Redux",
+        "Aprender buenas prácticas",
+        "Aprender sobre el ecosistema de React",
+        "Aprender sobre el ecosistema de Redux",
+        "Aprender sobre React Hooks",
+    ],
+    tecnologies: ["React", "Redux", "Css", "NodeJs"],
+};
 ---
 
 <section
@@ -20,7 +69,7 @@ const movieParagraphs = [
         <header class="pt-20 z-40">
             <div class="mx-2 my-10 rounded-lg z-40 relative">
                 <h2
-                    class="font-semibold text-center text-3xl py-5 px-10 hover:text-[#0a0a0a] duration-500"
+                    class="font-semibold text-center text-3xl py-5 px-10 hover:text-[#dfdfdf] duration-500"
                 >
                     Explorando mis proyectos
                 </h2>
@@ -34,32 +83,44 @@ const movieParagraphs = [
                         class="relative h-56 overflow-hidden rounded-lg md:h-96"
                     >
                         <ItemCarousel
-                            img={movies}
+                            img={moviesP}
                             nameImg="movies-bg"
                             numberItem="3"
                             title="Películas"
-                            paragraphs={movieParagraphs}
+                            paragraphs={movies.paragraphs}
+                            tecnologies={movies.tecnologies}
+                            gitGubLink="https://github.com/johaortiz/movies-react"
+                            projectLink="https://movies-react-delta.vercel.app/"
                         />
                         <ItemCarousel
                             img={booksPf}
                             nameImg="books-bg"
                             numberItem="4"
                             title="Libro Paraíso"
-                            paragraphs={[]}
+                            paragraphs={books.paragraphs}
+                            tecnologies={books.tecnologies}
+                            gitGubLink="https://github.com/boogy2207/deployBoggy"
+                            projectLink="https://www.libroparaiso.com.ar/"
                         />
                         <ItemCarousel
                             img={dogsPi}
                             nameImg="dogs-bg"
                             numberItem="5"
                             title="Perritos Malvados"
-                            paragraphs={[]}
+                            paragraphs={dogs.paragraphs}
+                            tecnologies={dogs.tecnologies}
+                            gitGubLink="https://github.com/johaortiz/Dogs-PI"
+                            projectLink="https://www.perritosmalvados.com.ar/"
                         />
                         <ItemCarousel
                             img={matrix}
                             nameImg="matrix-bg"
                             numberItem="6"
                             title="Calculadora de Matríces"
-                            paragraphs={[]}
+                            paragraphs={university.paragraphs}
+                            tecnologies={university.tecnologies}
+                            gitGubLink="https://github.com/johaortiz/matrices.github.io"
+                            projectLink="https://matrices-six.vercel.app/"
                         />
                     </div>
                     <!-- Slider indicators -->
