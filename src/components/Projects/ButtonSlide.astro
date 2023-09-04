@@ -1,0 +1,11 @@
+---
+const { numberSlide } = Astro.props;
+const ariaLabel = `Slide ${numberSlide + 1}`;
+---
+
+<button
+    type="button"
+    class="w-4 h-4 rounded-full"
+    aria-current="true"
+    aria-label={ariaLabel}
+    data-carousel-slide-to={numberSlide}></button>

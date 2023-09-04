@@ -1,0 +1,44 @@
+---
+import instagram from "../../public/icons/instagram.svg";
+import linkedin from "../../public/icons/linkedin.svg";
+import github from "../../public/icons/github.svg";
+import twitter from "../../public/icons/twitter.svg";
+import discord from "../../public/icons/discord.svg";
+import cv from "../../public/icons/cv.svg";
+import cvPdf from "../../public/cv/cv.pdf";
+---
+
+<div class="flex items-center space-x-10 mt-4 [&>a>img]:h-20 py-1 my-5">
+    <a href="https://www.instagram.com/joha.ortizz/" target="_blank">
+        <img src={instagram} alt="instagram-logo" />
+        <small>Instagram</small>
+    </a>
+    <a href="https://www.linkedin.com/in/johatris/" target="_blank">
+        <img src={linkedin} alt="linkedIn-logo" />
+        <small>LinkedIn</small>
+    </a>
+    <a href="https://github.com/johaortiz" target="_blank">
+        <img src={github} alt="gitHub-logo" />
+        <small>GitHub</small>
+    </a>
+</div>
+<div class="flex items-center space-x-10 mt-4 [&>a>img]:h-20 py-1 my-5">
+    <a href="https://twitter.com/JohaTris" target="_blank">
+        <img src={twitter} alt="instagram-logo" />
+        <small>Twitter</small>
+    </a>
+    <a href="https://discordapp.com/users/apstris" target="_blank">
+        <img src={discord} alt="linkedIn-logo" />
+        <small>Discord</small>
+    </a>
+    <a href={cvPdf} download="Cv Ortiz Joaquin">
+        <img src={cv} alt="gitHub-logo" />
+        <small>Curriculum</small>
+    </a>
+</div>
+<a href="mailto:apstris.dev@gmail.com" class="mt-4 text-xl"
+    >Correo: <strong class="font-semibold">apstrs.dev@gmail.com</strong></a
+>
+<span class="mt-4 text-xl"
+    >Celular: <strong class="font-semibold">+54 9 376 529 6716</strong></span
+>

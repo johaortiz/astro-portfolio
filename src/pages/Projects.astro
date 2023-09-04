@@ -1,0 +1,181 @@
+---
+import ItemCarousel from "../components/Projects/ItemCarousel.astro";
+import projectImg from "../../public/pictures/projects.jpg";
+import moviesP from "../../public/pictures/projects/movies.png";
+import booksPf from "../../public/pictures/projects/booksPf.png";
+import dogsPi from "../../public/pictures/projects/dogsPi.png";
+import matrix from "../../public/pictures/projects/matrix.png";
+import ButtonSlide from "../components/Projects/ButtonSlide.astro";
+import SliderControls from "../components/Projects/SliderControls.astro";
+
+const dogs = {
+    title: "Perritos Malvados",
+    altImg: "dogs-bg",
+    paragraphs: [
+        "Construir una App utilizando React, Redux, Node y Sequelize",
+        "Para afianzar y conectar los conceptos aprendidos en el curso",
+        "Aprender buenas prácticas",
+        "Aprender y practicar el flujo de trabajo de GIT",
+        "Utilizar y practicar testing",
+    ],
+    tecnologies: ["React", "Redux", "Css", "NodeJs"],
+    links: {
+        project: "https://www.perritosmalvados.com.ar/",
+        github: "https://github.com/johaortiz/Dogs-PI",
+    },
+};
+
+const university = {
+    title: "Calculadora de Matríces",
+    altImg: "matrix-bg",
+    paragraphs: [
+        "Resolver problemas simples de matrices",
+        "Ser capaz de resolverlo en código",
+    ],
+    tecnologies: ["React", "JavaScript", "DaisyUi", "Tailwind"],
+    links: {
+        project: "https://github.com/johaortiz/matrices.github.io",
+        github: "https://matrices-six.vercel.app/",
+    },
+};
+
+const books = {
+    title: "Libro Paraíso",
+    altImg: "books-bg",
+    paragraphs: [
+        "Construir un E-commerce utilizando React, Redux, Node y Sequelize",
+        "Aprender buenas prácticas",
+        "Aprender y practicar Git-Flow",
+        "Liderar un equipo",
+    ],
+    tecnologies: [
+        "React",
+        "Redux",
+        "DaisyUi",
+        "Tailwind",
+        "Mui",
+        "NodeJs",
+        "Sequelize",
+        "jwt",
+        "Postgres",
+        "Paypal",
+        "Google OAuth2",
+        "Cloudinary",
+    ],
+    links: {
+        project: "https://www.libroparaiso.com.ar/",
+        github: "https://github.com/boogy2207/deployBoggy",
+    },
+};
+
+const movies = {
+    title: "Películas",
+    altImg: "movies-bg",
+    paragraphs: [
+        "Construir una App utilizando React y Redux",
+        "Aprender buenas prácticas",
+        "Aprender sobre el ecosistema de React",
+        "Aprender sobre el ecosistema de Redux",
+        "Aprender sobre React Hooks",
+    ],
+    tecnologies: ["React", "Redux", "Css", "NodeJs"],
+    links: {
+        project: "https://movies-react-delta.vercel.app/",
+        github: "https://github.com/johaortiz/movies-react",
+    },
+};
+---
+
+<section
+    id="projects"
+    class="landing-section bg-black h-screen w-full text-center relative overflow-hidden text-white"
+    data-header-color="white"
+>
+    <div class="z-30 relative h-full flex flex-col">
+        <header class="pt-12 z-40">
+            <div class="mx-2 my-10 rounded-lg z-40 relative">
+                <div class="pt-2 pb-8">
+                    <h2
+                        class="font-semibold text-center text-3xl py-5 px-10 hover:text-[#dfdfdf] duration-500"
+                    >
+                        Explora mis proyectos
+                    </h2>
+                    <p>Un pequeño recorrido a unos proyectos (los subidos)</p>
+                </div>
+                <div
+                    id="default-carousel"
+                    class="relative duration-[2000ms] sm:mx-10"
+                    data-carousel="static"
+                >
+                    <!-- Carousel wrapper -->
+                    <div
+                        class="relative h-56 overflow-hidden rounded-lg md:h-96"
+                    >
+                        <ItemCarousel
+                            title={movies.title}
+                            img={moviesP}
+                            nameImg={movies.altImg}
+                            numberItem="3"
+                            paragraphs={movies.paragraphs}
+                            tecnologies={movies.tecnologies}
+                            gitGubLink={movies.links.github}
+                            projectLink={movies.links.project}
+                        />
+                        <ItemCarousel
+                            title={books.title}
+                            img={booksPf}
+                            nameImg={books.altImg}
+                            numberItem="4"
+                            paragraphs={books.paragraphs}
+                            tecnologies={books.tecnologies}
+                            gitGubLink={books.links.github}
+                            projectLink={books.links.project}
+                        />
+                        <ItemCarousel
+                            title={dogs.title}
+                            img={dogsPi}
+                            nameImg={dogs.altImg}
+                            numberItem="5"
+                            paragraphs={dogs.paragraphs}
+                            tecnologies={dogs.tecnologies}
+                            gitGubLink={dogs.links.github}
+                            projectLink={dogs.links.project}
+                        />
+                        <ItemCarousel
+                            title={university.title}
+                            img={matrix}
+                            nameImg={university.altImg}
+                            numberItem="6"
+                            paragraphs={university.paragraphs}
+                            tecnologies={university.tecnologies}
+                            gitGubLink={university.links.github}
+                            projectLink={university.links.project}
+                        />
+                    </div>
+                    <!-- Slider indicators -->
+                    <div
+                        class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2"
+                    >
+                        <ButtonSlide numberSlide="0" />
+                        <ButtonSlide numberSlide="1" />
+                        <ButtonSlide numberSlide="2" />
+                        <ButtonSlide numberSlide="3" />
+                    </div>
+                    <!-- Slider controls -->
+                    <SliderControls />
+                </div>
+            </div>
+            <div class="absolute top-0 bottom-0 h-full w-full z-10">
+                <img
+                    class="object-cover object-center h-full w-full top-0 bottom-0 opacity-50"
+                    src={projectImg}
+                    alt="bg"
+                />
+            </div>
+            <footer
+                class="flex flex-col sm:flex-row flex-grow justify-end sm:justify-center items-center z-40 relative [&>button]:m-3"
+            >
+            </footer>
+        </header>
+    </div>
+</section>

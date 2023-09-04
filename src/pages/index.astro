@@ -1,10 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
-import Home from "../components/Home.astro";
-import About from "../components/About.astro";
-import Projects from "../components/Projects.astro";
-import Contact from "../components/Contact.astro";
+import Home from "./Home.astro";
+import About from "./About.astro";
+import Projects from "./Projects.astro";
+import Contact from "./Contact.astro";
 ---
 
 <Layout title="<apsTris.dev>">
@@ -13,16 +13,17 @@ import Contact from "../components/Contact.astro";
     class="snap-y snap-mandatory relative w-full h-screen overflow-auto scroll-smooth"
   >
     <div class="snap-center">
-      <!-- <Home /> -->
+      <Home />
     </div>
     <div class="snap-center">
-      <!-- <About /> -->
+      <About />
     </div>
     <div class="snap-center">
-      <!-- <Projects /> -->
+      <Projects />
     </div>
     <div class="snap-center">
       <Contact />
     </div>
   </main>
 </Layout>
+<!--  -->

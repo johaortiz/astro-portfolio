@@ -1,0 +1,61 @@
+---
+const {
+    img,
+    nameImg,
+    numberItem,
+    title,
+    paragraphs,
+    gitGubLink,
+    projectLink,
+    tecnologies,
+} = Astro.props;
+const modal = `my_modal_${numberItem}.showModal()`;
+const openProjectLink = `window.open('${projectLink}', '_blank')`;
+const openGitHubtLink = `window.open('${gitGubLink}', '_blank')`;
+---
+
+<div class="hidden duration-700 ease-in-out" data-carousel-item>
+    <button class="" onclick={modal}>
+        <div class="relative">
+            <img src={img} class="w-full" alt={nameImg} />
+            <div
+                class="absolute top-0 left-0 w-full h-full bg-black font-bold text-3xl opacity-0 hover:opacity-50 transition-opacity duration-300 ease-in-out flex justify-center items-center"
+            >
+                Ver más "{title}"
+            </div>
+        </div>
+    </button>
+</div>
+
+<dialog id=`my_modal_${numberItem}` class="modal modal-bottom sm:modal-middle">
+    <form
+        method="dialog"
+        class="modal-box bg-black/80 backdrop-blur-md text-white"
+    >
+        <h3 class="font-bold text-3xl">{title}</h3>
+        <div class="mt-5 text-left">
+            <h4 class="font-bold text-lg text-center py-1">
+                Objetivos del Proyecto
+            </h4>
+            {
+                paragraphs.map((text: string, i: number) => {
+                    return (
+                        <p class="p-1">
+                            {i % 2 === 0 ? "⚫" : "🔘"}
+                            {text}
+                        </p>
+                    );
+                })
+            }
+        </div>
+        <h4 class="font-bold text-lg text-center py-1">
+            Tecnologías Utilizadas
+        </h4>
+        <span>{tecnologies.join(" - ")}</span>
+        <div class="modal-action">
+            <button onclick={openProjectLink} class="btn">Proyecto</button>
+            <button onclick={openGitHubtLink} class="btn">GitHub</button>
+            <button class="btn">Cerrar</button>
+        </div>
+    </form>
+</dialog>

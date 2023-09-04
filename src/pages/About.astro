@@ -1,0 +1,125 @@
+---
+import Card from "../components/About/Card.astro";
+import aboutImg from "../../public/pictures/about.jpeg";
+const paragraphs = [
+  "Con más de 2 años de experiencia en el mundo del desarrollo, he trabajado en una variedad de proyectos desafiantes.",
+  "Estoy estudiando Ingeniería en Sistemas de Información en la Universidad de la Cuenca del Plata dónde también estoy realizando actividades como ayudante de cátedras.",
+  "Mi objetivo a corto plazo es colaborar en proyectos ambiciosos que desafíen mis habilidades y me permitan crecer como profesional. A largo plazo, aspiro a liderar equipos de desarrollo y contribuir al avance de la tecnología",
+];
+const frontTecnologies = [
+  "React",
+  "Astro",
+  "NextJs",
+  "Vite",
+  "React Native",
+  "Flutter",
+  "Electron",
+  "Angular",
+  "Redux",
+  "Jest",
+  "React Query",
+  "Tailwind",
+  "Sass",
+  "Bootstrap",
+  "MUI",
+  "DaisyUi",
+  "Flowbite",
+  "Y más...",
+];
+const backTecnologies = [
+  "NodeJs",
+  "Laravel",
+  "Express",
+  "Postgresql",
+  "MongoDb",
+  "Sequelize",
+  "TypeORM",
+  "Morgan",
+  "Jwt",
+  "NodeMailer",
+  "OAuth",
+  "Cloudinary",
+  "Auth0",
+  "Y más...",
+];
+const generalTecnologies = [
+  "JavaScript",
+  "TypeScript",
+  "Java",
+  "C",
+  "C++",
+  "C#",
+  "Python",
+  "Rust",
+  "PHP",
+  "Y más...",
+];
+---
+
+<section
+  id="about"
+  class="landing-section bg-black h-screen w-full text-center relative overflow-hidden text-white"
+  data-header-color="white"
+>
+  <div class="z-30 relative h-full flex flex-col">
+    <header class="pt-20 z-40">
+      <div class="ml-10 lg:mr-52 rounded-lg z-40 relative">
+        <h2
+          class="font-semibold text-3xl py-5 px-10 hover:text-[#dfdfdf] duration-500"
+        >
+          ¡Esto es un poco sobre mí!
+        </h2>
+        <div class="hidden sm:block">
+          {
+            paragraphs.map((paragraph) => {
+              return (
+                <p class="text-xl py-1 px-1 sm:px-10 text-left hover:text-[#dfdfdf] duration-500">
+                  {paragraph}
+                </p>
+              );
+            })
+          }
+        </div>
+        <div class="block sm:hidden">
+          <p
+            id="corousel-paragraphs-1"
+            class="text-xl pt-1 px-10 text-left hover:text-[#dfdfdf] duration-500"
+          >
+            Con más de 2 años de experiencia en el mundo del desarrollo, he
+            trabajado en una variedad de proyectos.
+          </p>
+        </div>
+      </div>
+
+      <div class="absolute top-0 bottom-0 h-full w-full z-10">
+        <img
+          class="object-cover object-center h-full w-full top-0 bottom-0 opacity-25"
+          src={aboutImg}
+          alt="bg"
+        />
+      </div>
+    </header>
+    <footer
+      class="flex flex-col sm:flex-row flex-grow justify-end sm:justify-center items-center z-40 relative [&>button]:m-3"
+    >
+      <Card
+        title="FrontEnd"
+        subTitle="El Maravilloso Mundo del Front-End: Transformando Visiones en Realidad"
+        tecnologies={frontTecnologies}
+        numberCard="0"
+      />
+      <Card
+        title="BackEnd"
+        subTitle="Los Entresijos del Back-End: Tejiendo la Lógica que Sustenta la Tecnología"
+        tecnologies={backTecnologies}
+        numberCard="1"
+      />
+      <Card
+        title="General"
+        subTitle="Explorando el Universo de los Lenguajes: Más Allá del Código"
+        tecnologies={generalTecnologies}
+        numberCard="2"
+      />
+    </footer>
+  </div>
+</section>
