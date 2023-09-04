@@ -2,6 +2,7 @@
 import ItemCarousel from "../components/Projects/ItemCarousel.astro";
 import projectImg from "../../public/pictures/projects.jpg";
 import moviesP from "../../public/pictures/projects/movies.png";
+import OldPort from "../../public/pictures/projects/OldPort.png";
 import booksPf from "../../public/pictures/projects/booksPf.png";
 import dogsPi from "../../public/pictures/projects/dogsPi.png";
 import matrix from "../../public/pictures/projects/matrix.png";
@@ -84,6 +85,31 @@ const movies = {
         github: "https://github.com/johaortiz/movies-react",
     },
 };
+
+const oldPortfolio = {
+    title: "Primer Portfolio",
+    altImg: "old-portfolio-bg",
+    paragraphs: [
+        "Desarrollé un portafolio utilizando React y Redux para la gestión del estado de la aplicación.",
+        "Implementé componentes reutilizables y utilizé React Hooks para la lógica de los componentes.",
+        "Utilicé DaisyUI para estilizar la interfaz de usuario, lo que facilitó el diseño responsive y atractivo.",
+        "Incorporé formularios interactivos para recopilar información de contacto de los visitantes.",
+        "Aprendí sobre buenas prácticas de desarrollo y seguí los principios de diseño de experiencia de usuario (UX) para mejorar la accesibilidad y la usabilidad del portafolio.",
+    ],
+    tecnologies: [
+        "React",
+        "Redux",
+        "CSS",
+        "Node.js",
+        "DaisyUI",
+        "NodeJs",
+        "NodeMailer",
+    ],
+    links: {
+        project: "https://new-portfolio-opal-three.vercel.app/",
+        github: "https://github.com/johaortiz/new-portfolio",
+    },
+};
 ---
 
 <section
@@ -113,7 +139,7 @@ const movies = {
                     >
                         <ItemCarousel
                             title={movies.title}
-                            img={moviesP}
+                            img={OldPort}
                             nameImg={movies.altImg}
                             numberItem="3"
                             paragraphs={movies.paragraphs}
@@ -150,6 +176,16 @@ const movies = {
                             tecnologies={university.tecnologies}
                             gitGubLink={university.links.github}
                             projectLink={university.links.project}
+                        />
+                        <ItemCarousel
+                            title={oldPortfolio.title}
+                            img={matrix}
+                            nameImg={oldPortfolio.altImg}
+                            numberItem="6"
+                            paragraphs={oldPortfolio.paragraphs}
+                            tecnologies={oldPortfolio.tecnologies}
+                            gitGubLink={oldPortfolio.links.github}
+                            projectLink={oldPortfolio.links.project}
                         />
                     </div>
                     <!-- Slider indicators -->
